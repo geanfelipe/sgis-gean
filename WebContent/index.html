@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sistema de Gestão da Informação -Prefeitura Municipal de Parnamirim</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="assets/js/jquery-2.1.3.min.js"></script>
+	<script type="text/javascript" src="assets/js/main.js"></script>
+	
+	<script type="text/javascript" src="Semantic-UI-1.11.6/dist/semantic.min.js"></script>
+	<script type="text/javascript" src="assets/js/additional-methods.js"></script>
+	<script type="text/javascript" src="assets/js/jquery.validate.js"></script>
+	<link rel="stylesheet" href="Semantic-UI-1.11.6/dist/semantic.min.css">
+	<link rel="import" href="form.html">
+
+</head>
+<body>
+<div class="ui segment">
+	<div class="ui vertically divided grid">
+		<div class="ten row">
+			<div class="ten wide column">
+				<h3 class="ui dividing header">Prefeitura Municipal de Parnamirim</h3>
+				<p></p>
+					<div class="ui tiered menu" >
+						<div class="ui small menu">
+				  <a class="active item" id="portalAdministrativo">
+				    <i class="home icon"></i>Portal Administrativo
+				  </a>
+				   <div class="right menu">
+				   <div class="item">
+				      <div class="ui icon input">
+				        <input type="text" placeholder="Search...">
+				        <i class="search link icon"></i>
+				      </div>
+				    </div>
+				    <div class="ui simple dropdown item">
+				      Suporte <i class="dropdown icon"></i>
+				      <div class="menu">
+				        <a class="item"><i class="mail icon"></i> Enviar e-Mail</a>
+				        <a class="item"><i class="call icon"></i>Número: (84) 3644 8125</a>
+				        <a class="item"><i class="chat icon"></i> Chamar on-line</a>
+				      </div>
+				    </div>
+				    <div class="item">
+				        <div class="ui primary button">Sair</div>
+				    </div>
+				    <div class="ui sub menu">
+								<div class="ui simple dropdown item modulo">
+									<span contextmenu='cadastro'><i class="text file icon"></i>
+										Cadastro</span> <i class="dropdown icon"></i>
+									<div class="menu">
+										<div class="ui simple dropdown item">
+											<span class="aplicativo" contextmenu='semas'>SEMAS <i
+												class="dropdown icon"></i></span>
+											<div class="menu">
+												<a id="irParaCadastroPessoal"class="item sessao" contextmenu="pessoal">Pessoal</a>
+												<a class="item sessao" contextmenu="juridico" id="irParaCadastroPessoaJuridica">Jurídico</a>
+											</div>
+										</div>
+										<div class="ui simple dropdown item">
+											<span class="aplicativo" contextmenu='geral'>Geral <i
+												class="dropdown icon"></i></span>
+											<div class="menu">
+												<a class="item sessao" contextmenu="atendimento">Atendimento</a>
+												<a class="item sessao" contextmenu="protocolo">Protocolo</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="ui simple dropdown item modulo">
+									<span><i class="signal icon"></i> Relatórios</span> <i
+										class="dropdown icon"></i>
+								</div>
+								<div class="ui simple dropdown item modulo">
+									<span><i class="bell outline icon"></i>
+										Notificações</span> <i class="dropdown icon"></i>
+								</div>
+								<div class="ui simple dropdown item modulo">
+									<span><i class="setting icon"></i>
+										Configurações</span> <i class="dropdown icon"></i>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="areaDoFormPessoaFisica">
+	<form id="formPessoaFisica" class="ui error form segment">
+	  <div class="ui error message">
+	    <div class="header">Action Forbidden</div>
+	    <p>You can only sign up for an account once with a given e-mail address.</p>
+	  </div>
+	    <div class="field">
+	      <label>Name</label>
+	      <input placeholder="Name" type="text" name = "name">
+	    </div>
+	  <div class="field">
+	    <label>Gender</label>
+	    <div class="ui selection dropdown">
+	      <div class="default text">Select Gender</div>
+	      <i class="dropdown icon"></i>
+	      <input type="hidden" name="gender">
+	      <div class="menu">
+	        <div class="item" data-value="male">Male</div>
+	        <div class="item" data-value="female">Female</div>
+	      </div>
+	    </div>
+	  </div>
+	  <div class="field">
+			<label for="Cidadao-estadoCivil">Estado Civil</label>
+			<div class="ui selection dropdown">
+				<input type="hidden" name="Cidadao-estadoCivil">
+				<i class="dropdown icon"></i>
+				<div class="default text">Estado Civil</div>
+				<div class="menu">
+					<div class="item" data-value="CASADO">CASADO</div>
+					<div class="item" data-value="DIVORCIADO">DIVORCIADO</div>
+					<div class="item" data-value="SOLTEIRO">SOLTEIRO</div>
+					<div class="item" data-value="VIUVO">VIUVO</div>
+				</div>
+			</div>
+		</div>
+	  <div class="field">
+			<label >Data de Nascimento</label>
+			<input name="dataNascimentoPessoaFisica" id ="dataNascimentoPessoaFisica" placeholder="dd/mm/aaaa" type="text" class="dataNascimentoPessoaFisica">
+			<div id="msgData_Cidadao-dataDeNascimento" class="mensagemErro">
+				
+			</div>
+	   </div>
+	   <div class="field">
+			<label for="Cidadao-nacionalidade">Nacionalidade</label> <input name="Cidadao-nacionalidade" placeholder="Nacionalidade" type="text">
+		</div>
+		<div class="field">
+			<label for="Cidadao-cor">Raça</label>
+			<div id="MenuItem-Cidadao-cor" class="ui selection dropdown">
+				<input type="hidden" name="Cidadao-cor">
+				<div class="default text">Raça</div>
+				<i class="dropdown icon"></i>
+				<div class="menu">
+					<div class="item" data-value="AMARELO">AMARELO</div>
+					<div class="item" data-value="BRANCO">BRANCO</div>
+					<div class="item" data-value="NEGRO">NEGRO</div>
+					<div class="item" data-value="PARDO">PARDO</div>
+				</div>
+			</div>
+		</div>
+		<div class="field">
+		<label>Endereço</label>
+		<input name="endereco" placeholder="Endereço" type="text">
+		</div>
+	  <div id="butaoPessoaFisica" class="ui submit button">Submit</div>
+	</form>
+</div>
+
+<div id="areaDoFormPessoaJuridica">
+	<form id="formPessoajuridica" class="ui error form segment">
+	  	<div class="ui error message">
+		    <div class="header">Action Forbidden</div>
+		    <p>You can only sign up for an account once with a given e-mail address.</p>
+	 	</div>
+		<div class="field">
+			<label>Razão social</label> <input name="razao-social" placeholder="Raz�o social" type="text">
+		</div>
+		<div class="field">
+			<label>CNPJ</label> <input name="ncpj" placeholder="CNPJ" type="text">
+		</div>
+		<div class="field">
+			<label>	Telefone</label> <input name="Telefone" placeholder="Telefone " type="text">
+		</div>
+		<div class="field">
+			<label>	Email </label> <input name="email" placeholder="Email " type="text">
+		</div>
+	  <div id="butaoPessoaJuridica" class="ui submit button">Submit</div>
+	</form>
+</div>
+</body>
+</html>
