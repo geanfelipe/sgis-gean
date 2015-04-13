@@ -5,6 +5,7 @@ import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -49,7 +50,8 @@ public class PessoalServlet extends HttpServlet {
 		}
 		
 		dao.adicionar(pessoal);
-		
+		RequestDispatcher rd = request.getRequestDispatcher("AdicionadoPessoal.jsp");
+		rd.forward(request, response);
 		
 	}
     /**
